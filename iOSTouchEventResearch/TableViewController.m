@@ -9,6 +9,8 @@
 #import "TableViewController.h"
 #import "YellowViewController.h"
 #import "BlueViewController.h"
+#import "WhiteViewController.h"
+#import "ViewController1.h"
 
 @interface TableViewController ()
 
@@ -24,7 +26,7 @@
 }
 
 - (void)initTitlesArray {
-    self.titlesArray = @[@"UIResponder&UIGestureRecognizer", @"UIGestureRecognizer&UIControl"];
+    self.titlesArray = @[@"HitTestingResearch", @"EventInterception", @"UIResponder&UIGestureRecognizer", @"UIGestureRecognizer&UIControl"];
 }
 
 #pragma mark - UITableViewDelegate
@@ -32,11 +34,21 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.row) {
         case 0: {
+            WhiteViewController *whiteVC = [[WhiteViewController alloc] init];
+            [self.navigationController pushViewController:whiteVC animated:YES];
+            break;
+        }
+        case 1: {
+            ViewController1 *VC1 = [[ViewController1 alloc] init];
+            [self.navigationController pushViewController:VC1 animated:YES];
+            break;
+        }
+        case 2: {
             YellowViewController *yellowVC = [[YellowViewController alloc] init];
             [self.navigationController pushViewController:yellowVC animated:YES];
             break;
         }
-        case 1: {
+        case 3: {
             BlueViewController *blueVC = [[BlueViewController alloc] init];
             [self.navigationController pushViewController:blueVC animated:YES];
             break;
