@@ -11,6 +11,7 @@
 #import "BlueViewController.h"
 #import "WhiteViewController.h"
 #import "ViewController1.h"
+#import "ViewController2.h"
 
 @interface TableViewController ()
 
@@ -26,7 +27,7 @@
 }
 
 - (void)initTitlesArray {
-    self.titlesArray = @[@"HitTestingResearch", @"EventInterception", @"UIResponder&UIGestureRecognizer", @"UIGestureRecognizer&UIControl"];
+    self.titlesArray = @[@"HitTestingResearch", @"EventInterception", @"TouchsMovedRespond", @"UIResponder&UIGestureRecognizer", @"UIGestureRecognizer&UIControl"];
 }
 
 #pragma mark - UITableViewDelegate
@@ -44,11 +45,16 @@
             break;
         }
         case 2: {
+            ViewController2 *VC2 = [[ViewController2 alloc] init];
+            [self.navigationController pushViewController:VC2 animated:YES];
+            break;
+        }
+        case 3: {
             YellowViewController *yellowVC = [[YellowViewController alloc] init];
             [self.navigationController pushViewController:yellowVC animated:YES];
             break;
         }
-        case 3: {
+        case 4: {
             BlueViewController *blueVC = [[BlueViewController alloc] init];
             [self.navigationController pushViewController:blueVC animated:YES];
             break;
